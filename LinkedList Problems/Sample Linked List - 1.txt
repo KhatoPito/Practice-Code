@@ -1,0 +1,98 @@
+namespace Sample_LinkedList
+{
+
+	#region NodeClass
+	public class Node<T>
+	{
+		internal Node<T> next;
+		internal T data;
+
+		internal Node(T data)
+		{
+			this.data = data;
+		}
+	}
+	#endregion NodeClass
+
+	class LinkedList<T>
+	{
+
+		#region AddNode
+		public void AddNodeAtEnd(T item, Node<T> head)
+		{
+			Node<T> tempNode = head;
+
+			if (head != null)
+			{
+				while (tempNode.next != null)
+				{
+					tempNode = tempNode.next;
+				}  
+
+				Node<T> newNode = new Node<T>(item);
+				newNode.next = null;
+				tempNode.next = newNode;
+			}
+			else
+			{
+				Console.WriteLine("Item can not be added.");
+			}
+		}
+		#endregion AddNode
+
+		#region Print
+		public void PrintList(Node<T> node)
+		{
+			if (node == null)
+			{
+				Console.WriteLine("The List is empty.");
+			}
+			else
+			{
+				while (node != null)
+				{
+					Console.WriteLine(node.data);
+					node = node.next;
+				}
+			}	
+		}
+		#endregion Print
+
+		public Node<T> ReverseList(Node<T> currentNode)
+		{
+			if (currentNode.next == null)
+				return currentNode;
+
+			Node<T> tempNode = ReverseList(currentNode.next);
+			Node<T> tNode = currentNode.next;
+			currentNode.next = null;
+			tNode.next = currentNode;
+
+			return tempNode;
+		}
+	}
+
+	class samepleListMain
+	{
+		static void Main(string[] args)
+		{
+			LinkedList<string> _listObj = new LinkedList<string>();
+
+			Node<string> headNode = new Node<string>("Ved");
+
+			_listObj.AddNodeAtEnd("Dant", headNode);
+			_listObj.AddNodeAtEnd("arada", headNode);
+			_listObj.AddNodeAtEnd("Abe", headNode);
+			_listObj.AddNodeAtEnd("Gagfs", headNode);
+
+			Console.WriteLine("The List which is in Order.");
+			_listObj.PrintList(headNode);
+
+			Console.WriteLine("The List which is in Reverse Order.");
+			Node<string> newNode = _listObj.ReverseList(headNode);
+			_listObj.PrintList(newNode);
+			Console.ReadLine();
+		}
+
+	}
+}

@@ -1,0 +1,146 @@
+using System;
+
+namespace Sample_LinkedList
+{
+
+	#region NodeClass
+	public class Node<T>
+	{
+		internal Node<T> next;
+		internal T data;
+
+		internal Node(T data)
+		{
+			this.data = data;
+		}
+	}
+	#endregion NodeClass
+
+	class LinkedList<T>
+	{
+
+		#region AddNode
+		public void AddNodeAtEnd(T item, Node<T> head)
+		{
+			Node<T> tempNode = head;
+
+			if (head != null)
+			{
+				while (tempNode.next != null)
+				{
+					tempNode = tempNode.next;
+				}
+
+				Node<T> newNode = new Node<T>(item);
+				newNode.next = null;
+				tempNode.next = newNode;
+			}
+			else
+			{
+				Console.WriteLine("Item can not be added.");
+			}
+		}
+		#endregion AddNode
+
+		#region Print
+		public void PrintList(Node<T> node)
+		{
+			if (node == null)
+			{
+				Console.WriteLine("The List is empty.");
+			}
+			else
+			{
+				while (node != null)
+				{
+					Console.Write(node.data + " ");
+					node = node.next;
+				}
+			}
+
+			Console.Write("\r\n");
+		}
+		#endregion Print
+
+		#region Merge Sort
+		internal Node<T> List_MergeSort(Node<T> head)
+		{
+			if (head == null || head.next == null)
+				return head;
+
+			Node<T> midNode = FindMidNode(head);
+			Node<T> rightNode = List_MergeSort(midNode.next);
+			midNode.next = null;
+			Node<T> leftNode = List_MergeSort(head);
+			return MergeList(leftNode, rightNode);
+		}
+
+		internal Node<T> MergeList(Node<T> leftNode, Node<T> rightNode)
+		{
+			Node<T> sortedNode;
+
+			if (leftNode == null) return rightNode;
+			if (rightNode == null) return leftNode;
+
+			if (Convert.ToInt16(leftNode.data) <= Convert.ToInt16(rightNode.data))
+			{
+				sortedNode = leftNode;
+				sortedNode.next = MergeList(leftNode.next, rightNode);
+			}
+			else
+			{
+				sortedNode = rightNode;
+				sortedNode.next = MergeList(leftNode, rightNode.next);
+			}
+
+			return sortedNode;
+		}
+		#endregion Merge Sort
+
+		#region FindMidNode
+		Node<T> FindMidNode(Node<T> head)
+		{
+			if (head == null) return head;
+
+			Node<T> midnode = head;
+			Node<T> fasterNode = head;
+
+			while (fasterNode.next != null && fasterNode.next.next != null)
+			{
+				midnode = midnode.next;
+				fasterNode = fasterNode.next.next;
+			}
+
+			return midnode;
+		}
+		#endregion FindMidNode
+	}
+
+	#region Main
+	class SampleMain
+	{
+		static void Main(string[] args)
+		{
+			LinkedList<int> _listObj = new LinkedList<int>();
+
+			#region AddNode
+			Node<int> headNode = new Node<int>(34);
+
+			_listObj.AddNodeAtEnd(33, headNode);
+			_listObj.AddNodeAtEnd(1, headNode);
+			_listObj.AddNodeAtEnd(4, headNode);
+			_listObj.AddNodeAtEnd(99, headNode);
+			#endregion AddNode
+
+			Console.WriteLine("The List which is NOT in Order.");
+			_listObj.PrintList(headNode);
+
+			Console.WriteLine("The List which is sorted in Order.");
+			_listObj.PrintList(_listObj.List_MergeSort(headNode));
+
+
+			Console.ReadLine();
+		}
+	}
+	#endregion Main
+}

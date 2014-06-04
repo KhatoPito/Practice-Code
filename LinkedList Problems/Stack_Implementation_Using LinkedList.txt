@@ -1,0 +1,85 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Sample_Stack
+{
+	// a stack implementation using linked list for integers
+
+	// | a | -> | b | -> | c | 
+	// | a | is top
+	
+	#region Node Class
+	public class Node
+	{
+		public int data;
+		public Node next;
+
+		public Node(int data)
+		{
+			this.data = data;
+		}
+	}
+	#endregion Node Class
+
+	class myStack
+	{
+		public Node top;
+
+		#region Push
+		public void Push(Node node)
+		{
+			if (node == null)
+				return;
+			else if (top == null)
+			{
+				top = node;
+			}
+			else
+			{
+				node.next = top;
+				top = node;
+			}
+		}
+		#endregion Push
+
+		#region Pop
+		public Node Pop()
+		{
+			if (top == null)
+			{
+				Console.WriteLine("The stack is empty.");
+				return top;
+			}
+			else
+			{
+				Node tempNode = top;
+				top = top.next;
+				return tempNode;
+			}
+		}
+		#endregion Pop
+
+		#region Main
+		static void Main(string[] args)
+		{
+			myStack obj = new myStack();
+
+			obj.Push(new Node(1));
+			obj.Push(new Node(2));
+			obj.Push(new Node(3));
+			obj.Push(new Node(4));
+			obj.Push(new Node(5));
+
+			Console.WriteLine( "Pop item: " + obj.Pop().data);
+			Console.WriteLine("Pop item: " + obj.Pop().data);
+			Console.WriteLine("Pop item: " + obj.Pop().data);
+			Console.WriteLine("Pop item: " + obj.Pop().data);
+			Console.WriteLine("Pop item: " + obj.Pop().data);
+
+			Console.ReadLine();
+		}
+		#endregion Main
+	}
+}

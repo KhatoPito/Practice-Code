@@ -1,0 +1,103 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Sample_Stack
+{
+	// a stack implementation using linked list for integers
+	// 1 -> 2-> 3->4
+	// 1 is fisrt
+	// 4 is last
+	// Deque - return 1 and 2 becomes first
+	// Enque enter 4->5 and 5 becomes last 
+	// 1->2->3->4->5
+
+	/*
+		-------------
+		a -> b -> c 
+		-------------
+		^       ^
+		|       |
+	  first    last
+	 */
+
+
+	#region Node Class
+	public class Node
+	{
+		public int data;
+		public Node next;
+
+		public Node(int data)
+		{
+			this.data = data;
+		}
+	}
+	#endregion Node Class
+
+	class myQueue
+	{
+		public Node first;
+		public Node last;
+
+		#region Enqueue
+		public void Enqueue(Node node)
+		{
+			if (node == null)
+				return;
+			else if (first == null)
+			{
+				first= node;
+				last = node;
+			}
+			else
+			{
+				last.next = node;
+				last = node;
+			}
+		}
+		#endregion Enqueue
+
+		#region Dequeue
+		public Node Dequeue()
+		{
+			if (last == null)
+			{
+				Console.WriteLine("The queue is empty.");
+				return last;
+			}
+			else
+			{
+				Node tempNode = first;
+				first = first.next;
+				return tempNode;
+			}
+		}
+		#endregion Dequeue
+
+		#region Main
+		static void Main(string[] args)
+		{
+			myQueue obj = new myQueue();
+
+			obj.Enqueue(new Node(1));
+			obj.Enqueue(new Node(2));
+			obj.Enqueue(new Node(3));
+			obj.Enqueue(new Node(4));
+			obj.Enqueue(new Node(5));
+
+			Console.WriteLine( "Pop item: " + obj.Dequeue().data);
+			Console.WriteLine("Pop item: " + obj.Dequeue().data);
+			Console.WriteLine("Pop item: " + obj.Dequeue().data);
+			obj.Enqueue(new Node(6));
+
+			Console.WriteLine("Pop item: " + obj.Dequeue().data);
+			Console.WriteLine("Pop item: " + obj.Dequeue().data);
+			Console.WriteLine("Pop item: " + obj.Dequeue().data);
+
+			Console.ReadLine();
+		}
+		#endregion Main
+	}
+}
