@@ -1,0 +1,79 @@
+using System;
+
+namespace MyProject 
+{
+	class SampleSearch2DSortedArray
+	{
+		static void Search2DArray(int [,]myArray, int SearchNum)
+		{
+			int arrayLength = (int)Math.Sqrt(myArray.Length);
+			int xIndex = arrayLength -1;
+			int yindex = 0;
+			bool flag = false;
+
+			while(xIndex >=0 && yindex <= arrayLength-1)
+			{
+				if (myArray[xIndex, yindex] > SearchNum)
+				{
+					xIndex--;
+				}
+				else if (myArray[xIndex, yindex] < SearchNum)
+				{
+					yindex++;
+				}
+				else
+				{
+					flag = true;
+					Console.WriteLine("The number found at index: " + xIndex + "," + yindex);
+					break;
+				}
+			}
+
+			if (!flag)
+				Console.WriteLine("Couldn't find the number. ");
+
+
+
+		}
+
+		static void Main(string[] args)
+		{
+			#region Fields
+			Console.WriteLine("Please Enter the Matrix: ");
+			Console.WriteLine(" ");
+			int[,] myArray = new int[3,3];
+			int m = 0;
+			#endregion Fields
+
+			#region Create an Array
+			for (int i = 0; i < 3; i++)
+			{
+				for (int j = 0; j < 3; j++)
+				{
+					myArray[i,j] = m++;
+				}
+			}
+			#endregion Create an Array
+
+			#region Print an Array
+			for (int i = 0; i < 3; i++)
+			{
+				for (int j = 0; j < 3; j++)
+				{
+					Console.Write(myArray[i,j] + " " );
+
+				}
+				Console.WriteLine(" ");
+			}
+
+
+			#endregion Print an Array
+			Console.WriteLine();
+			Search2DArray(myArray,-1);
+			Console.ReadLine();
+
+
+		}
+	}
+
+}
