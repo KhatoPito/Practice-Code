@@ -1,0 +1,122 @@
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Sample_Code
+{
+	/// <summary>
+	/// In order traverse without recursion and stack
+	/// </summary>
+	class SamplePracticeInorderWithoutStack
+	{
+		public class Tree
+		{
+			#region Node Class
+			public class Node
+			{
+				internal Node left;
+				internal Node right;
+				internal int data;
+
+				internal Node(int data)
+				{
+					this.data = data;
+				}
+			}
+			#endregion Node Class
+
+			#region AddNode
+			static public void AddNode(Node parentNode, Node node)
+			{
+				Node currentNode = node, tempParentNode = parentNode;
+				bool leftFlag = false, rightFlag = false;
+
+				while (parentNode != null)
+				{
+					if (parentNode != null && parentNode.data > node.data)
+					{
+						tempParentNode = parentNode;
+						parentNode = parentNode.left;
+						leftFlag = true;
+						rightFlag = false;
+					}
+
+					if (parentNode != null && parentNode.data < node.data)
+					{
+						tempParentNode = parentNode;
+						parentNode = parentNode.right;
+						leftFlag = false;
+						rightFlag = true;
+					}
+
+				}
+
+				if (leftFlag)
+					tempParentNode.left = node;
+
+				if (rightFlag)
+					tempParentNode.right = node;
+			}
+			#endregion AddNode
+
+			#region InorderWithoutStack
+			private static void InorderWithoutRecursion(Node node)
+			{
+				Node currentNode = node;
+				Node tempNode = null;
+				Node rightNode = null;
+				if (currentNode == null)
+					return;
+
+				while (currentNode != null)
+				{
+					if (currentNode.left == null)
+					{
+						Console.WriteLine(currentNode.data);
+						currentNode = currentNode.right;			
+					}
+					else if(currentNode.left != null)
+					{
+						// find right most successor
+						rightNode = currentNode.left;
+						tempNode  = currentNode.left;
+
+						while (rightNode.right != null)
+						{
+							rightNode = rightNode.right;
+						}
+						
+						rightNode.right = currentNode;
+						currentNode.left = null;
+						currentNode = tempNode;
+					}
+				}
+			}	
+			#endregion InorderWithoutStack
+
+			#region Main
+			static void Main(string[] args)
+			{
+				Tree treeObj = new Tree();
+
+				#region Create BST
+				Node nodeObj = new Node(25);
+				AddNode(nodeObj, new Node(40));
+				AddNode(nodeObj, new Node(16));
+				AddNode(nodeObj, new Node(20));
+				AddNode(nodeObj, new Node(15));
+				AddNode(nodeObj, new Node(36));
+				AddNode(nodeObj, new Node(30));
+				AddNode(nodeObj, new Node(34));
+				#endregion Create BST
+
+				InorderWithoutRecursion(nodeObj);
+				Console.ReadLine();
+			}
+			#endregion Main
+		}
+	}
+
+}

@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Sample_Code
+{
+
+	/// <summary>
+	///  find greatest common divisor of two numbers
+	/// </summary>
+	class samplePracticeGCD
+	{
+
+		public void FindGCD(int numerator, int denomitor, int reminder)
+		{
+			reminder = numerator % denomitor;
+
+			if (reminder == 0)
+			{
+				Console.WriteLine("The greatest common divisor is: " + denomitor);
+			}
+			else
+			{
+				numerator = denomitor;
+				denomitor = reminder;
+				FindGCD(numerator, denomitor, reminder);
+			}
+		}
+		
+		public void FindGCD(int num1, int num2)
+		{
+			int numerator = num1 > num2 ? num1 : num2;
+			int denomitor = num1 < num2 ? num1 : num2;
+
+			FindGCD(numerator, denomitor, 1);
+		}
+
+		static void Main(string[] args)
+		{
+			samplePracticeGCD obj = new samplePracticeGCD();
+
+			int num1 = 32;
+			int num2 = 5;
+
+			obj.FindGCD(num1, num2);
+
+			Console.ReadLine();
+		}
+	}          
+
+}

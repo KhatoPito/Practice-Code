@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Sample_Code
+{
+
+	/// <summary>
+	///  find FindPermutation  of a string
+	/// </summary>
+	class samplePracticeBrackets
+	{
+		public void FindBrackets(string bstr, int leftRemains, int rightRemains)
+		{
+
+			// stop condition, when to print the string - when all rightparanthesesis are empty
+			if (rightRemains == 0)
+			{
+				Console.WriteLine(bstr);
+				return;
+			}
+
+			// print when left parath are left
+			if (leftRemains > 0)
+			{
+				// First choice - print left ones if they are more than right
+				FindBrackets(bstr + "(", leftRemains - 1, rightRemains);
+
+				// Second choice - print right if they are more than left
+				if(leftRemains < rightRemains)
+				{
+					FindBrackets(bstr + ")", leftRemains, rightRemains - 1);
+				}
+			}
+			else
+			{
+				// print if all left are printed and only right ones are left
+				FindBrackets(bstr + ")", leftRemains, rightRemains - 1);			
+			}
+		}
+
+		static void Main(string[] args)
+		{
+			samplePracticeBrackets obj = new samplePracticeBrackets();
+			obj.FindBrackets("", 0, 2);
+			Console.ReadLine();
+		}
+	}          
+
+}

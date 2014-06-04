@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Sample_Code
+{
+
+	/// <summary>
+	/// {1,3,3,5,6,6,6,6,9}
+	///  verify if a binary tree is a bst
+	/// </summary>
+	class SamplePrintChangeCoins
+	{
+		private int[] coins = new int[] {25, 10, 5, 1 };
+
+
+		private void PrintChangeCoins(int[] counts, int[] coins, int startIndex, int Amount)
+		{
+
+			if (startIndex >= coins.Length)
+			{
+				for (int i = 0; i < coins.Length; i++)
+				{
+					Console.Write(" "+counts[i] + " * " + coins[i] + "+");					
+				}
+
+				Console.WriteLine();
+
+				return;
+			}
+
+			if(startIndex == coins.Length -1)
+			{
+
+				if (Amount % coins[startIndex] == 0)
+				{
+					counts[startIndex] = Amount / coins[startIndex];
+					PrintChangeCoins(counts, coins, startIndex + 1, 0);
+				}
+			}
+			else
+			{
+				for (int i = startIndex; i < Amount/coins[startIndex]; i++)
+				{
+					counts[startIndex] = i;
+					PrintChangeCoins(counts, coins, startIndex + 1, (Amount - (coins[startIndex] * i)));
+				}
+			}
+		}
+
+
+		static void Main(string[] args)
+		{
+			SamplePrintChangeCoins obj = new SamplePrintChangeCoins();
+			int[] counts = new int[obj.coins.Length];
+			obj.PrintChangeCoins(counts, obj.coins, 0,51); 
+			Console.ReadLine();
+		}
+	}
+}

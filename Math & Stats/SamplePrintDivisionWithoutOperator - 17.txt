@@ -1,0 +1,45 @@
+	class SamplePrintDivisionWithoutOperator 
+	{
+
+		private static double DevideFunc(double dividend, double divisor)
+		{
+			int totalCount = 0;
+			double quotient = dividend;
+			int count=1;
+			int num_loop = 0;
+			double temp = divisor;
+
+			while (quotient > 0 )
+			{
+				if (quotient >= (divisor*2))
+				{
+					divisor = divisor * 2;
+					count = count * 2;
+				}
+
+				while (quotient < divisor)
+				{
+					divisor = divisor - temp;
+					count = count - 1;
+					num_loop++;
+				}
+
+				quotient = quotient - divisor;
+				totalCount += count;
+
+				num_loop++;
+			}
+
+			Console.WriteLine("Total num of loop count: " + num_loop);
+
+
+			return totalCount;
+		}
+
+		static void Main(string[] args)
+		{
+			Console.WriteLine("{0}" + "/" + "{1}" + " = " + DevideFunc(1500,2), 1500, 2);
+			Console.ReadLine();
+
+		}
+	}

@@ -1,0 +1,46 @@
+	class samplePracticeSquareRoot
+	{
+		static double FindRoot(double num)
+		{
+			double precision = 0.00001;
+			double start = 0;
+			double end = num;
+			double mid = 0.0;
+
+			if (num == 1)
+			{
+				return 1;
+			}
+			else if (num == 0)
+			{
+				return 0;
+			}
+
+			while (end-start > precision)
+			{
+				mid = (start + end)/2;
+				double midSquare = mid * mid;
+
+				if (midSquare == num)
+				{
+					return mid;
+				}
+				else if (midSquare > num)
+				{
+					end = mid;
+				}
+				else
+				{
+					start = mid;
+				}		
+			}
+
+			return mid;
+		}
+
+		static void Main(string[] args)
+		{
+			Console.WriteLine("The Square root is: " + Math.Round(FindRoot(26),4));
+			Console.ReadLine();
+		}
+	}          
