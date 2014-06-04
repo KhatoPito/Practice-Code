@@ -1,0 +1,147 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Sample_Code
+{
+	/// <summary>
+	/// A class where two linked list nodes are added and sum is displayed
+	/// </summary>
+	class SamplePracticeSumLinkedListNode
+	{
+		public class SumLinkedListNodes
+		{
+			#region Node Class
+			public class Node
+			{
+				internal Node next;
+				internal int data;
+				internal int size;
+
+				internal Node(int data)
+				{
+					this.data = data;
+				}
+			}
+			#endregion Node Class
+
+			#region AddNodeAtEnd
+			public void AddNodeAtEnd(Node parentNode, Node node)
+			{
+				if (node == null)
+				{
+					Console.WriteLine("Node can't be empty");
+					return;
+				}
+				else
+				{
+					if (parentNode == null)
+					{
+						parentNode = node;
+					}
+					else
+					{
+						Node currentNode = parentNode;
+						while (currentNode.next != null)
+						{
+							currentNode = currentNode.next;
+						}
+
+						currentNode.next = node;
+					}
+
+					parentNode.size++;
+				}
+			}
+			#endregion AddNodeAtEnd
+
+			#region SumLinkedListNode
+			private void SumLinkedListNode(Node list1, Node list2)
+			{
+				#region Members
+				int sum = 0;
+				int carry = 0;
+				int mul = 0;
+				int total = 0;
+				int dOfSize = 0;
+
+				Stack<int> stackList1 = new Stack<int>();
+				Stack<int> stackList2 = new Stack<int>();
+				#endregion Members
+				
+				if (list1.size > list2.size)
+				{
+					dOfSize = list1.size - list2.size;
+
+					while (dOfSize > 0)
+					{
+						stackList2.Push(0);
+						dOfSize--;
+					}
+				}
+				else
+				{
+					dOfSize = list2.size - list1.size;
+
+					while (dOfSize > 0)
+					{
+						stackList1.Push(0);
+						dOfSize--;
+					}
+
+				}
+
+				while(list1 != null)
+				{
+					stackList1.Push(list1.data);
+					list1 = list1.next;
+				}
+
+				while (list2 != null)
+				{
+					stackList2.Push(list2.data);
+					list2 = list2.next;
+				}
+
+				while (stackList1.Count != 0 && stackList2.Count != 0)
+				{
+
+					sum = stackList1.Pop() + stackList2.Pop() + carry;
+					carry = sum / 10;
+
+					if (stackList1.Count != 0 && stackList2.Count != 0)
+					{
+						sum = sum % 10;
+					}
+
+					total += (mul == 0) ? sum : Convert.ToInt32(sum * Math.Pow(10, mul));
+					mul++;
+				}
+
+				Console.WriteLine("Total is: " + total);				
+			}
+			#endregion SumLinkedListNode
+
+			#region Main
+			static void Main(string[] args)
+			{
+				SumLinkedListNodes objLink = new SumLinkedListNodes();
+
+				Node objNode1 = new Node(8);
+				objLink.AddNodeAtEnd(objNode1, new Node(2));
+				objLink.AddNodeAtEnd(objNode1, new Node(7));
+
+
+				Node objNode2 = new Node(334);
+				objLink.AddNodeAtEnd(objNode2, new Node(4));
+				objLink.AddNodeAtEnd(objNode2, new Node(5));
+
+				objLink.SumLinkedListNode(objNode1, objNode2);
+				Console.ReadLine();
+			}
+			#endregion Main
+		}
+	}
+
+}

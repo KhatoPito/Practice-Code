@@ -1,0 +1,59 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace MyProject 
+{
+
+	// How to implement a queue using two stacks
+
+	class SampleStacktoMakeQueue
+	{
+		private static Stack<int> inputStack = new Stack<int>();
+		private static Stack<int> outputStack = new Stack<int>();
+
+		public static void Enqueue(int num)
+		{
+			inputStack.Push(num);
+			Console.WriteLine("Enque num " + num);
+		}
+
+		public static void Dequeue()
+		{
+			if (outputStack.Count != 0)
+			{
+				Console.WriteLine("Dequeue num " + outputStack.Pop());
+			}
+			else if (inputStack.Count != 0)
+			{
+				while (inputStack.Count != 0)
+				{
+					outputStack.Push(inputStack.Pop());
+				}
+
+				Console.WriteLine("Dequeue num " + outputStack.Pop());
+			}
+			else
+			{
+				Console.WriteLine("Stack is Empty.");
+			}
+		}
+
+
+		static void Main(string[] args)
+		{
+			Enqueue(1);
+			Enqueue(2);
+			Enqueue(3);
+			Dequeue();
+			Enqueue(4);
+			Enqueue(5);
+			Dequeue();
+			Dequeue();
+
+
+			Console.ReadLine();
+		}
+	}
+
+}
