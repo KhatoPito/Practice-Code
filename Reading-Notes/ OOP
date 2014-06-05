@@ -1,1 +1,32 @@
 Notes for OOP fundamentals 
+************************************
+
+Association
+It represents a relationship between two or more objects where all objects have their own lifecycle and there is no owner. 
+Let’s take an example of relationship between Teacher and Student. Multiple students can associate with a single teacher and a single student can associate with multiple teachers. But there is no ownership between the objects and both have their own lifecycle. Both can be created and deleted independently.
+
+
+Aggregation
+It is a specialized form of Association where all object have their own lifecycle but there is ownership. This represents “whole-part or a-part-of” relationship.
+Let’s take an example of relationship between Department and Teacher. A Teacher may belongs to multiple departments. Hence Teacher is a part of multiple departments. But if we delete a Department, Teacher Object will not destroy.
+
+
+Composition
+It is a specialized form of Aggregation. It is a strong type of Aggregation. In this relationship child objects does not have their lifecycle without Parent object. If a parent object is deleted, all its child objects will also be deleted.
+Let’s take an example of relationship between House and rooms. House can contain multiple rooms there is no independent life of room and any room cannot belongs to two different house if we delete the house room will automatically delete.
+
+***************************************
+
+Major Difference between Factory and DI (IOC) 
+
+When using the factory pattern your code is still responsible for creating Objects. By DI you outsource that 
+responsibility to another class or a framework which is separate from your code.
+
+Inversion of Control (IoC) means that objects do not create other objects on which they rely to do their work. Instead, they get the objects that they need from an outside source (for example, an xml configuration file).
+
+Dependency Injection (DI) means that this is done without the object intervention, usually by a framework component that passes constructor parameters and set properties.
+
+************************************
+
+http://javarevisited.blogspot.com/2011/04/garbage-collection-in-java.html
+
