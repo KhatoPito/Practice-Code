@@ -1,0 +1,13 @@
+Singleton Vs Static Class note:
+You can use static classes to store single-instance, global data
+static constructors might be convenient, but that they are slow. Static class
+are mostly used with global common data. Singleton provides faser performance
+The advantage is that the code that uses the singleton doesn't need to know if it is a singleton or a transient object. Using a static class means you have to call static methods explicitly. Think about dependency injection, for example.
+Moreover, singleton, as a non-static class, can still implement an interface, supports inheritance, etc. For example, you can't inherit a static class and override a virtual method in it.
+
+A typical use of static constructors is when the class is using a log file and the constructor is used to write entries to this file.
+
+
+
+
+
