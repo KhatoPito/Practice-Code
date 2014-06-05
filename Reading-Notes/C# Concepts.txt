@@ -1,0 +1,44 @@
+Out/Ref concepts C#
+
+The out keyword causes arguments to be passed by reference. 
+This is like the ref keyword, except that ref requires that the variable be initialized before it is passed. 
+To use an out parameter, both the method definition and the calling method must explicitly use the out keyword
+
+class OutExample
+{
+    static void Method(out int i)
+    {
+        i = 44;
+    }
+    static void Main()
+    {
+        int value;
+        Method(out value);
+        // value is now 44
+    }
+}
+
+
+    class RefExample
+    {
+        static void Method(ref int i)
+        {
+            // Rest the mouse pointer over i to verify that it is an int. 
+            // The following statement would cause a compiler error if i 
+            // were boxed as an object.
+            i = i + 44;
+        }
+
+        static void Main()
+        {
+            int val = 1;
+            Method(ref val);
+            Console.WriteLine(val);
+
+            // Output: 45
+        }
+    }
+	
+************************
+
+	
