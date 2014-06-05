@@ -1,0 +1,19 @@
+1) LinkedHashMap 
+Hash table and linked list implementation of the Map interface, with predictable iteration order.
+
+2) HashSet 
+This class implements the Set interface, backed by a hash table (actually a HashMap instance). It makes no guarantees as to the iteration order of the set;
+
+3) LinkedHashSet
+Hash table and linked list implementation of the Set interface, with predictable iteration order. This implementation differs from HashSet in that it maintains a doubly-linked list running through all of its entries. This linked list defines the iteration ordering, which is the order in which elements were inserted into the set (insertion-order). Note that insertion order is not affected if an element is re-inserted into the set. (An element e is reinserted into a set s if s.add(e) is invoked when s.contains(e) would return true immediately prior to the invocation.)
+
+4) TreeMap
+A Red-Black tree based NavigableMap implementation.
+
+
+5) ArrayList
+Resizable-array implementation of the List interface
+
+6)TreeSet
+A NavigableSet implementation based on a TreeMap
+
