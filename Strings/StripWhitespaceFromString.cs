@@ -39,35 +39,4 @@ namespace StripWhitespaceFromString
             Console.ReadLine();
         }
     }
-
-    //public static double Pow(double a, int b)
-    //{
-    //    double result = 1.0;
-    //    bool isAnegative = false;
-    //    bool isBnagative = false;
-
-
-    //    if (a == 0) return 0;
-    //    if (b == 0) return 1;
-
-    //    if (a < 0) isAnegative = true;
-    //    if (b < 0) isBnagative = true;
-
-    //    double tempB = Math.Abs(b);
-    //    double tempA = Math.Abs(a);
-
-    //    while (tempB > 0)
-    //    {
-    //        result = result * tempA;
-    //        tempB = tempB - 1;
-    //    }
-
-    //    if (isBnagative)
-    //        result = (1 / result);
-
-    //    if (isAnegative && (b%2!=0)) 
-    //        result = - result;
-
-    //      return result;
-    //}
 }
