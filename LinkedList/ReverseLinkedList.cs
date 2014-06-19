@@ -21,7 +21,6 @@ namespace ReverseLinkedList
 
     }
 
-
     public sealed class ReverseLinkedList<T>
     {
         #region Private members
