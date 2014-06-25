@@ -131,6 +131,21 @@ Candidate JB: Honestly, it is really hard to keep up to date. As a part of my re
 
 
 
+LinkedIN Telephone Round
+- Pointer to Parent is given in B-Tree.
+FInd the Least Common node between two nodes of tree
+
+
+Yahoo Telephonic Round
+
+1) Array - Multiplication number can't use Division 
+2) Binary tree - Product os two child save to parent
+// Sum up child values and save the values calculated in intermediate steps
+Multiply instead of summung up
+
+
+
+ How to design a cache for distribute database?  
 
 
 
