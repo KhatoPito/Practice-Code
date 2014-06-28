@@ -148,4 +148,33 @@ Multiply instead of summung up
  How to design a cache for distribute database?  
 
 
+Ericsson Onsite Question
+1) LinkedList implementation
+2) Fibonacci Series implement
+3) Puzzle - black-white ball - wrong label
+
+
+
+HP - Java Dev - Phone interview
+
+Code
+1) 2 array list - remove duplicate and merge to final list
+2) Mirror Tree 
+
+
+Question
+
+What is serialization?
+How Garbage Collector works in JAVA?
+Diff between C and Java ? why to use Java? Why to use OOP?
+Diff between thread and process
+What is Inheritance? Polymorphism? Encaptulation?
+Question on pass by value & pass by ref? diff between them
+String, String builder - String buffer
+Thread - deadlock - how to avoid DeadLock?
+What kind of Exceptions java has?
+Type Casting? 
+
+
+
 
