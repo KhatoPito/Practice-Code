@@ -169,6 +169,9 @@ Serialization is the conversion of an object to a series of bytes, so that the o
 storage or streamed across a communication link. The byte stream can then be deserialised - converted into a replica 
 of the original object.
 
+What's the difference between overriding and overloading a method?
+
+What is pass by value & Pass by ref in Java?
 
 How Garbage Collector works in JAVA?
 
