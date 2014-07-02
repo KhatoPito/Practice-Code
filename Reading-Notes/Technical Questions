@@ -180,7 +180,15 @@ Diff between thread and process
 What is Inheritance? Polymorphism? Encaptulation?
 Question on pass by value & pass by ref? diff between them
 String, String builder - String buffer
+
+
 Thread - deadlock - how to avoid DeadLock?
+
+- when two or more threads waiting for each other to release lock and get stuck for infinite time , situation is called deadlock .
+it will only happen in case of multitasking. real reason for deadlock is not multiple threads but the way they access lock , if you provide an ordered access then problem will be resolved 
+
+
+
 What kind of Exceptions java has?
 Type Casting? 
 
