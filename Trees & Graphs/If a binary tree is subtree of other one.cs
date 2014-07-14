@@ -62,6 +62,12 @@ namespace Sample_Find_SubTree
 			}
 			#endregion AddNode
 
+
+			/*
+			You have two very large binary trees: T1, with Millions of node,
+			and T2 with hundreds of nodes. 
+			Create an algorithm to decide if T2 is a subtree of T1.
+			*/
 			#region CheckSubTree
 			private bool CheckSubTree(Node parent, Node subtree)
 			{
