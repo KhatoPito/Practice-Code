@@ -7,3 +7,13 @@ How .Net Garbage Collector functions?
 http://it.toolbox.com/blogs/programming-life/memory-manangement-in-net-6788
 
 http://www.hanselman.com/blog/WhatGreatNETDevelopersOughtToKnowMoreNETInterviewQuestions.aspx
+
+http://www.hanselman.com/blog/WhatGreatNETDevelopersOughtToKnowMoreNETInterviewQuestions.aspx
+
+http://www.hanselman.com/blog/ASPNETInterviewQuestions.aspx
+
+
+How is a strongly-named assembly different from one that isn’t strongly-named?
+A strongly names assembly is signed using a public-private key pair. This means that external 
+parties can verify that an assembly comes from a particular publisher and has not been modified from its original form. 
+Things like the Global Assembly Cache would typically require assemblies to be strongly named for it to be registered.
