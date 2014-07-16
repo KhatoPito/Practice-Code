@@ -17,3 +17,24 @@ How is a strongly-named assembly different from one that isn’t strongly-named?
 A strongly names assembly is signed using a public-private key pair. This means that external 
 parties can verify that an assembly comes from a particular publisher and has not been modified from its original form. 
 Things like the Global Assembly Cache would typically require assemblies to be strongly named for it to be registered.
+
+
+How to deal with Unhandled Exceptions?
+http://tech.pro/tutorial/668/csharp-tutorial-dealing-with-unhandled-exceptions
+
+The UnhandledException is an event on the AppDomain class. An AppDomain is, in very simplistic terms, the execution environment for your code. 
+What it does is pretty simple - the event is fired every time there is an unhandled exception that propagates all the way to the top of your application. Now, if there was nothing attached to the event, the app would show one of those classic "this app has encountered a problem and needs to close" dialogs, and down your app would go. But once you attach to this event, you have a chance to do something.
+
+
+
+
+
+What are the merits of JSON and/or XML and/or ??? output in a REST API?
+
+Advantages:
+XML - Lots of libraries, Devs are familiar with it, XSLT, Can be easiily Validated by both client and server (XSD, DTD), Hierarchical Data
+JSON - easily interpreted on client side, compact notation, Hierarchical Data
+Disadvantages:
+XML - Bloated, harder to interpret in JavaScript than JSON
+JSON - If used improperly can pose a security hole (don't use eval), Not all languages have libraries to interpret it.
+CSV - Does not support hierarchical data, you'd be the only one doing it, it's actually much harder than most devs think to parse valid csv files (CSV values can contain new lines as long as they are between quotes, etc).
