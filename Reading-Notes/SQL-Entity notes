@@ -1,0 +1,13 @@
+1) Entity Framework VS LINQ to SQL VS ADO.NET with stored procedures?
+
+Ans: 1) Performance  2) Speed of Development 3) Neat/Maintainable code - Entity Framework will provide
+
+4) Flexibility - Stored procs and raw SQL are more "flexible". 
+ou can leverage sprocs and SQL to generate faster queries for the odd specific case, 
+and you can leverage native DB functionality easier than you can with and ORM.
+
+You can use both in the same application, and you probably should. 
+Big bulk operations should go in stored procedures or SQL (which can actually be called by the EF), 
+and EF should be used for your CRUD operations and most of your middle-tier's needs.
+
+
