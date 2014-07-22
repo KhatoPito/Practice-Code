@@ -44,11 +44,13 @@ namespace Sample_Code
             {
                 while (diff > 0)
                     node1 = node1.parent;
+                    diff--;
             }
             else
             {
                 while (diff > 0)
                     node2 = node2.parent;
+                    diff--;
             }
 
 
