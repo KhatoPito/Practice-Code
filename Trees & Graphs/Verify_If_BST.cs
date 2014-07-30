@@ -88,6 +88,31 @@ namespace Sample_Code
 			}
 			#endregion isValidBST
 
+	            #region isBST
+	            private static bool isBST(Node node)
+	            {
+	                Node prev = null;
+	
+	                // traverse the tree in inorder fashion and keep track of prev node
+	                if (node != null)
+	                {
+	                    if (!isBST(node.left))
+	                        return false;
+	
+	                    if (prev != null && prev.data >= node.data)
+	                        return false;
+	
+	                    prev = node;
+	
+	                   return isBST(node.right);                                   
+	                }
+	
+	                return true;
+	            }
+	            #endregion isBST
+
+
+
 			static void Main(string[] args)
 			{
 				Tree treeObj = new Tree();
