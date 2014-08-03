@@ -152,6 +152,14 @@ namespace Sample_GraphPracticeDFSBFS
 				    }
 				}
 				
+				//Then you can iterate through these predecessors to 
+				// backtrack the path from any node, say e:
+			
+				while (π[e] != null)
+				{
+				    Console.WriteLine(e);
+				    e = π[e];
+				}
 			}
 			
 			
