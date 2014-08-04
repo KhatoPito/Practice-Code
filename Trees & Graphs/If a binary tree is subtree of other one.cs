@@ -8,6 +8,8 @@ namespace Sample_Find_SubTree
 	/// <summary>
 	/// A class where two Trees are used to see if one tree is sub tree of other tree
 	/// This is  O(n2) solution for this problem.
+	/// Better solu would be to use auxiliary array and store Inorder and PreOrder and check 
+	/// is T2 is subarray of T1 or not - That will be O(N)
 	/// </summary>
 		public class Tree
 		{
