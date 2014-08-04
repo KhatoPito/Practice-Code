@@ -7,6 +7,7 @@ namespace Sample_Find_SubTree
 {
 	/// <summary>
 	/// A class where two Trees are used to see if one tree is sub tree of other tree
+	/// This is  O(n2) solution for this problem.
 	/// </summary>
 		public class Tree
 		{
