@@ -215,3 +215,23 @@ Amazon interview Telephonic round..
 Find if a Tree is BST or not. 
 Used the recursion - interviewer didn't like it
 He hinted for INORDER. I scrwed up while adding value in array.
+
+Amazon SF - Onsite event
+
+1) Binary Tree node shuffle
+2) Design Uber
+3) Design Servie to cpy paste - architecture
+4) Tree node, path - null if sum C<= K , k is gievn sum
+
+
+Kareo Phone round
+Find if string is Palindrome?
+
+
+
+MSFT 1st phone round - Puzzle Question.
+
+There is a list of elements. And you have to find the "best" element from the list. The elements are comparable to each other, but the comparison is not transitive. E.g. if A > B and B > C, then A need NOT be greater than C.
+You have to return the best element as answer, which is better than every other element in the list. It is possible, that there is no such element. In that case, return null."
+
+
