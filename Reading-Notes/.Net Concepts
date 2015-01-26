@@ -26,7 +26,8 @@ The UnhandledException is an event on the AppDomain class. An AppDomain is, in v
 What it does is pretty simple - the event is fired every time there is an unhandled exception that propagates all the way to the top of your application. Now, if there was nothing attached to the event, the app would show one of those classic "this app has encountered a problem and needs to close" dialogs, and down your app would go. But once you attach to this event, you have a chance to do something.
 
 
-
+Detailed Explanation for Dependancy Injection 
+http://stackoverflow.com/questions/14301389/why-does-one-use-dependency-injection
 
 
 What are the merits of JSON and/or XML and/or ??? output in a REST API?
