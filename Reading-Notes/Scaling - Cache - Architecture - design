@@ -1,0 +1,12 @@
+Vertical scaling means that you increase your overall capacity by increasing the the capacity of its machines. E.g.:
+if you’re running out of disk space, you could add more hard disks to your database server.
+
+If your website is primarily a read-heavy system, vertical scaling your datastore with a relational database such as MySQL
+or PostgreSQL can be a good choice. Couple your RDBMS with a robust caching strategy that uses memcached or a CDN and you’ll 
+have a system that can scale pretty cheaply.
+
+
+Horizontal scaling means adding more machines to your setup.
+
+If your website is primarily a write-heavy system, you’re probably going to want to think about using a 
+horizontally scalable datastore such as Riak, Cassandra or HBase
