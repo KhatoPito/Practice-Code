@@ -7,11 +7,11 @@ using System.Text;
 /* Problem
  * A binary tree is given and two nodes of this tree is given, we have to find out the algorithm for
  * lowest common ancestor of the two given nodes. Common ancestor are the nodes which can be reached
- * from two nodes by following the parent links. Lowest common ancestor is the common ancestor which has the highest depth. 
+ * from two nodes by following the parent links. Lowest common ancestor is the common ancestor which has the highest depth. */
 
- * Time complexity O(n)
- * Space complexity O(h)
- /*
+// * Time complexity O(n)
+//* Space complexity O(h)
+
 namespace Sample_Code
 {
 
