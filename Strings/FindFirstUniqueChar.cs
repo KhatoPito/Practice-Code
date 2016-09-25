@@ -54,3 +54,49 @@ namespace FindFirstUniqueChar
         }
     }
 }
+
+****************************************************************************************************************************************
+
+ public class FirstUniqueChar
+    {
+        public class CountArray
+        {
+            public int Index;
+            public int Count;
+        }
+
+        public static CountArray[] ReturnFirstUniqueChar(string samplechar)
+        {
+            var countArray = new CountArray[256];
+
+            for (int i = 0; i < 256; i++)
+                countArray[i] = new CountArray();
+
+
+            for (var i = 0; i < samplechar.Length; i++)
+            {
+                countArray[samplechar[i]].Count++;
+
+                if (countArray[samplechar[i]].Count == 1)
+                    countArray[samplechar[i]].Index = i;
+            }
+
+            return countArray;
+        }
+
+        public static void Main(string[] args)
+        {
+            string sample = "AAAAAAAAAAABBC";
+            var ss = ReturnFirstUniqueChar(sample);
+            int index = 0;
+
+            for (int i = 1; i < 256; i++)
+            {
+                if (ss[i].Count == 1)
+                    index = ss[i].Index;
+            }
+
+            Console.WriteLine("the FirstUniqueChar is: " + sample[index]);
+            Console.ReadLine();
+        }
+    }
