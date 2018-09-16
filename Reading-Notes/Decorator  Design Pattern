@@ -1,0 +1,66 @@
+using System;
+
+
+public interface IShape 
+{
+   void drawing();
+}
+
+public class Circle : IShape
+{
+    public void drawing()
+    {
+        Console.WriteLine("drawing from Circle");
+    }
+}
+
+public abstract class ShapeDecorator : IShape
+{
+    public IShape decoratedShape;
+    
+    public ShapeDecorator(IShape decoratedShape)
+    {
+        this.decoratedShape = decoratedShape;
+    }  
+
+    public virtual void drawing()
+    {
+        this.decoratedShape.drawing();
+    }
+}
+
+public class RedShapeDecorator : ShapeDecorator
+{
+    public RedShapeDecorator(IShape decoratedShape) : base (decoratedShape) 
+    {
+    }  
+
+    public override void drawing()
+    {
+         base.drawing();
+         RedDrawing();
+    }
+    
+    private void RedDrawing()
+    {
+        Console.WriteLine( "Red color border from RedShapeDecorator" );
+    }
+}
+
+
+public class GFG{
+    
+	static public void Main ()
+	{
+	    IShape circle = new Circle();
+	    //IShape rectangle = new Rectangle();
+	    IShape redCirle = new RedShapeDecorator (circle);
+	   // IShape redRectangle = new RedShapeDecorator (rectangle);
+
+      //  circle.drawing();
+       // rectangle.drawing();
+        redCirle.drawing();
+      //  redRectangle.drawing();
+            
+	}
+}
