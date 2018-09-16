@@ -53,7 +53,7 @@ public class RedShapeDecorator : ShapeDecorator
 }
 
 
-public class GFG{
+public class DecoratorDesignPattern{
     
 	static public void Main ()
 	{
