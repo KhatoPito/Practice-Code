@@ -1,11 +1,12 @@
 using System;
 
-
+// The interface IShape defines the functionality of IShape implemented by decorator
 public interface IShape 
 {
    void drawing();
 }
 
+// Extension of a simple shape as Circle without anything special
 public class Circle : IShape
 {
     public void drawing()
@@ -14,6 +15,7 @@ public class Circle : IShape
     }
 }
 
+// Abstract decorator class - note that it implements IShape interface
 public abstract class ShapeDecorator : IShape
 {
     public IShape decoratedShape;
@@ -29,12 +31,15 @@ public abstract class ShapeDecorator : IShape
     }
 }
 
+// Decorator RedShapeDecorator draws Red Color Border.
+// Note it extends ShapeDecorator.
 public class RedShapeDecorator : ShapeDecorator
 {
     public RedShapeDecorator(IShape decoratedShape) : base (decoratedShape) 
     {
     }  
 
+    // Overriding methods defined in the abstract superclass
     public override void drawing()
     {
          base.drawing();
