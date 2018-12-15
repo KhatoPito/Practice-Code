@@ -7,7 +7,6 @@
     You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
     Example:
-
     Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
     Output: 7 -> 0 -> 8
     Explanation: 342 + 465 = 807.     
@@ -53,7 +52,6 @@ namespace KhatoPito
                 int sum = (l1 !=null ? l1.val : 0)  + ( l2 != null ?  l2.val : 0) + carry;
                 carry = sum / 10;
                 resultSum = sum % 10;
-
                 tempNode = new ListNode(resultSum);
 
                 if (head == null)
