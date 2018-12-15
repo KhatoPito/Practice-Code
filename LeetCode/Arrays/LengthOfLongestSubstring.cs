@@ -47,12 +47,20 @@ namespace KhatoPito
             {
                 if (stringMap.ContainsKey(input[i]))
                 {
+                    // start point is max of found char index and existing starting point
+                    // now found char can be lets say 1 but currrent starting point may have moved forward
+                    // thats why need to take max of both 
                     start = Math.Max( start, stringMap[input[i]] + 1);
                     stringMap[input[i]] = i;
+                    // once found the character - update the index for the char so that you 
+                    // start next interation after that 
                 }
                 else
+                    // if no match - just add to collection
                     stringMap.Add(input[i], i);   
 
+                // final result is max of existing result with compare to new result 
+                // i is current index, start is the starting point and +1 because 0 based array index
                 result = Math.Max(result, i - start + 1);
             }
 
