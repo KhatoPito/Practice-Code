@@ -14,7 +14,7 @@ using System.Threading.Tasks;
    Because nums[0] + nums[1] = 2 + 7 = 9,
    return [0, 1].
 
-    https://leetcode.com/articles/two-sum/
+https://leetcode.com/articles/two-sum/
      */
 
 namespace KhatoPito.Arrays
