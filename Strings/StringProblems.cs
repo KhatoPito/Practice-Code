@@ -78,18 +78,18 @@ namespace StringProblems
             int len = strArray1.Length;
             int[] countArray = new int[256];
 
-            for (int i = 0; i < len - 1; i++)
+            for (int i = 0; i < len; i++)
             {
-                countArray[strArray1[i]] = countArray[strArray1[i]]++;
-                countArray[strArray2[i]] = countArray[strArray1[i]]--;
+                countArray[strArray1[i]]++;
+                countArray[strArray2[i]]--;
             }
 
-            for (int i = 0; i < len - 1; i++)
+            for (int i = 0; i < len; i++)
             {
-                if (countArray[i] != 0)
+                if (countArray[strArray1[i]] != 0)
                     return false;
             }
-
+            
             return true;
         }
 
