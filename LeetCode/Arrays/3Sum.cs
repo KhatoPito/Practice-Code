@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace KhatoPito.ArrayPractice
 {
  /*
+ 
          *Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
 
         Note:
@@ -27,6 +28,13 @@ namespace KhatoPito.ArrayPractice
      *
  */
 
+   // Method 2 (Hashing : O(n2))  Auxiliary Space : O(n)
+   /*
+     We iterate through every element. For every element arr[i],
+     we find a pair with sum “-arr[i]”. This problem reduces to pairs sum and can be solved in O(n) time using hashing.  
+   */
+ 
+    // Method 3 (Sorting : O(n2)) - O(1) extra space
     public static class FindThreeSum
     {
 
