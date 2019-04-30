@@ -46,37 +46,32 @@ namespace ConsoleApp1
         //Dynamic Programming Solution
         // Recomputations of same subproblems can be avoided by constructing a temporary array L[][] in bottom up manner.
         //  Recursive Solution - Overlapping Subproblems
-        public static int lps(char[] seq)
+        public static int LongestPalindromeSubseq(string s)
         {
-            int n = seq.Length;
+            int n = s.Length;
+
             // Create a table to store results of subproblems 
-            int[,] L = new int[n,n];
+            int[,] LPS = new int[n,n];
 
-            // Strings of length 1 are palindrome of lentgh 1
-            for (int i = 0; i < n; i++)
-                 L[i,i] = 1;
-
-            // cl is length of substring 
-            for (int cl = 2; cl <= n; cl++)
+            for (int i = n - 1; i >= 0; i--)
             {
-                for (int i = 0 ; i < n-cl+1; i++)
+                // Strings of length 1 are palindrome of lentgh 1
+                LPS[i, i] = 1;
+
+                for (int j = i+1; j < n; j++)
                 {
-                    int j = cl + i - 1;
-
-                    if (seq[i] == seq[j] && i == 2)
-                        L[i, j] = 2;
-
-                    else if (seq[i] == seq[j])
-                        L[i, j] = 1 + L[i + 1, j - 1] + 2;
-
+                    if (s[i] == s[j])
+                    {
+                        LPS[i, j] = LPS[i + 1, j - 1] + 2;
+                    }
                     else
-                        L[i, j] = max(L[i + 1, j], L[i, j - 1]);
-
+                    {
+                        LPS[i, j] = Math.Max(LPS[i + 1, j], LPS[i, j - 1]);
+                    }
                 }
             }
 
-
-            return L[0, n - 1];
+            return LPS[0,n-1];
         }
 
 
