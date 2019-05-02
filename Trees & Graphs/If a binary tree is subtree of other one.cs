@@ -77,24 +77,18 @@ namespace Sample_Find_SubTree
 			#region CheckSubTree
 			private bool CheckSubTree(Node parent, Node subtree)
 			{
-				if (parent == null)
-					return false;
-				else if (subtree == null)
-					return true;
-
-				if (IsIdentical(parent, subtree))
-					return true;
+				if (parent == null) return false;
+				if (subtree == null) return true;
+				if (IsIdentical(parent, subtree)) return true;
 
 				return (CheckSubTree(parent.left, subtree) || CheckSubTree(parent.right, subtree));
 			}
 
 			private bool IsIdentical(Node parent, Node subtree)
 			{
-				if (parent == null && subtree == null)
-					return true;
+				if (parent == null && subtree == null) return true;
 				
-				if (parent == null || subtree == null)
-					return false;
+				if (parent == null || subtree == null) return false;
 
 				return ((parent.data == subtree.data)
 					&& IsIdentical(parent.left, subtree.left)
