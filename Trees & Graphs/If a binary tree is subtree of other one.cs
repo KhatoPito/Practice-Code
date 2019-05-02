@@ -92,6 +92,9 @@ namespace Sample_Find_SubTree
 			{
 				if (parent == null && subtree == null)
 					return true;
+				
+				if (parent == null || subtree == null)
+					return false;
 
 				return ((parent.data == subtree.data)
 					&& IsIdentical(parent.left, subtree.left)
