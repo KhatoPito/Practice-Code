@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace KhatoPito
+{
+    public static class IpValid
+    {
+        static void GetAllCommonArray(String str, int n, int[] prefix)
+        {
+            int left, right, k;
+
+            left = right = 0;
+            for (int i = 1; i < n; ++i)
+            {
+                if (i > right)
+                {
+                    left = right = i;
+
+                    while (right < n && str[right - left] == str[right])
+                    right++;
+                    prefix[i] = right - left;
+                    right--;
+                }
+                else
+                {
+                    k = i - left;
+
+                    if (prefix[k] < right - i + 1)
+                        prefix[i] = prefix[k];
+
+                    else
+                    {
+                        left = i;
+                        while (right < n && str[right - left] == str[right])
+                        right++;
+                        prefix[i] = right - left;
+                        right--;
+                    }
+                }
+            }
+        }
+
+        static int SumSimilarities(String s)
+        {
+            int[] commonArray = new int[s.Length-1];
+
+            GetAllCommonArray(s, s.Length - 1, commonArray);
+
+            int total = s.Length - 1;
+
+            for (int i = 1; i < s.Length - 1; i++)
+                total += commonArray[i];
+
+            return total;
+        }
+
+
+        public static List<int> commonPrefix(List<string> inputs)
+        {
+            var resultList = new List<int>();
+            foreach (var item in inputs)
+            {
+                resultList.Add(SumSimilarities(item));
+
+            }
+
+            return resultList;
+        }
+    }
+}
