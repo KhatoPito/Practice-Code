@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace KhatoPito.HackerRank
+{
+    public static class Test
+    {
+        public static string PrintHello()
+        {
+            return "Hello World!";
+        }
+
+        // Console.WriteLine(Test.subCount(new int[] { 5, 1, 2, 3, 4, 1 }, 3));
+        public static int subCount(List<int> nums, int k)
+        {
+            int n = nums.Count;
+
+            int[] mod = new int[k];
+            int cumSum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                cumSum += nums[i];
+
+                mod[((cumSum % k) + k) % k]++;
+            }
+
+            int answer = 0;
+
+            for (int i = 0; i < k; i++)
+
+                if (mod[i] > 1)
+                    answer += (mod[i] * (mod[i] - 1)) / 2;
+
+            answer += mod[0];
+            return answer;
+        }
+
+
+        //public static int kSub(int[] nums, int k)
+        //{
+        //    if (k == 0)
+        //        throw new ArgumentException("k==0");
+
+        //    List<int[]> answer = new List<int[]>();
+
+        //    if (nums == null || nums.Length == 0)
+        //        return answer.Count;
+
+        //    for (int i = 0; i < nums.Length; i++)
+        //    {
+        //        long sum = 0;
+        //        for (int j = i; j < nums.Length; j++)
+        //        {
+        //            sum = (sum + nums[j] % k) % k;
+        //            if (sum == 0)
+        //            {
+        //                int size = j - i + 1;
+        //                int[] sequence = new int[size];
+        //                Array.Copy(nums, i, sequence, 0, size);
+        //                answer.Add(sequence);
+        //            }
+        //        }
+        //    }
+        //    return answer.Count;
+        //}
+
+
+
+    }
+
+
+
+}
