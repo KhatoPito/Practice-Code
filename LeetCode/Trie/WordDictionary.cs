@@ -122,8 +122,6 @@ namespace KhatoPito.Heap
                     {
                         return true;
                     }
-                    else
-                        return false;
                 }
 
                 return false;
