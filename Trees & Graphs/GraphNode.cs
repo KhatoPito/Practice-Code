@@ -1,6 +1,6 @@
 
 
-class GraphNode{ 
+public class GraphNode{ 
 	int val;
 	GraphNode next;
 	GraphNode[] neighbors;
@@ -22,10 +22,7 @@ class GraphNode{
 
 
 public class GraphTest {
- 
-	
-  
-  
+
   public static void main(String[] args) {
 		GraphNode n1 = new GraphNode(1); 
 		GraphNode n2 = new GraphNode(2); 
