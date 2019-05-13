@@ -34,7 +34,6 @@ namespace KhatoPito.Graphs
         public HashSet<int> DepthFirstSearch(Graph g, int start)
         {
             var visited = new HashSet<int>();
-
             if (!g.AdjacencyList.ContainsKey(start))
                 return visited;
 
@@ -44,12 +43,10 @@ namespace KhatoPito.Graphs
             while (stack.Count > 0)
             {
                 var vertex = stack.Pop();
-
                 if (visited.Contains(vertex))
                     continue;
 
                 visited.Add(vertex);
-
                 foreach (var neighbor in g.AdjacencyList[vertex])
                 {
                     if (!visited.Contains(neighbor))
