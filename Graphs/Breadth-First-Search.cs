@@ -34,7 +34,6 @@ namespace KhatoPito.Graphs
         public HashSet<int> BreadthFirstSearch(Graph g, int start)
         {
             var visited = new HashSet<int>();
-
             if (!g.AdjacencyList.ContainsKey(start))
                 return visited;
 
@@ -44,21 +43,16 @@ namespace KhatoPito.Graphs
             while (queue.Count > 0)
             {
                 var vertex = queue.Dequeue();
-
                 if(visited.Contains(vertex))
                     continue;
 
                 visited.Add(vertex);
-
                 foreach (var neighbor in g.AdjacencyList[vertex])
                 {
                     if (!visited.Contains(neighbor))
-                    {
                         queue.Enqueue(neighbor);
-                    }
                 }
             }
-
             // this will contain all the visited nodes 
             return visited;
         }
