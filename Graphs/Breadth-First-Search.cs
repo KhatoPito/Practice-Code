@@ -10,6 +10,7 @@ namespace KhatoPito.Graphs
 {
     public class GraphPractice
     {
+        // Adjacency lists Approach
         public class Graph
         {
             public int Vertices;
