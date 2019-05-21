@@ -1,4 +1,7 @@
-﻿using System;
+// need to modify https://www.geeksforgeeks.org/design-a-data-structure-for-lru-cache/
+// Instead of List use DoublyLinkedList which gives O(1)
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
