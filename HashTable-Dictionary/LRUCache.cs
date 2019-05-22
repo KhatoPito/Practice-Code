@@ -1,71 +1,76 @@
 // need to modify https://www.geeksforgeeks.org/design-a-data-structure-for-lru-cache/
 // Instead of List use DoublyLinkedList which gives O(1)
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace samplecode_LRUCache
 {
-    class LRUCache<K,V>
+    public class LRUCache<K, V>
     {
-        int capacity = 0;
-        int cacheSize = 0;
-
-        Dictionary<K, V> cacheDict;
-        List<K> cacheList;
-
+        // Dictionary will give constant time O(1) 
+        public Dictionary<K, V> cacheDict;
+        // C# implements LinkedList as Doubly LinkedList which will give O(1) for addlast and remove from first
+        public LinkedList<K> cacheList;
+        public int capacity;
+        public int size;
 
         public LRUCache(int capacity)
         {
             this.capacity = capacity;
-            cacheDict = new Dictionary<K, V>(capacity);
-            cacheList = new List<K>();
+            cacheDict = new Dictionary<K, V>();
+            cacheList = new LinkedList<K>();
         }
 
-        public V get(K key)
+        public V Get(K key)
         {
-            V value = default(V);
-
-            // If the item is used
-            // Remove the item from the front as it becomes most recently used item
+            // If the item is used - remove the item from the front as it becomes most recently used item
             // Bring it back to the list and add it to Last 
             // so that on front you have least Recently used item in the list
+            V value = default(V);
+
             if (cacheDict.ContainsKey(key))
             {
                 value = cacheDict[key];
                 cacheList.Remove(key);
-                cacheList.Add(key);
+                cacheList.AddLast(key);
+            }
+
+            return value;
+
+        }
+
+        public void Put(K key, V value)
+        {
+            // If the item exist in the Dict, just replace its value 
+            // Key will be same but value might have changed
+            if (cacheDict.ContainsKey(key))
+            {
+                cacheDict[key] = value;
+                cacheList.Remove(key);
+                cacheList.AddLast(key);
             }
             else
             {
-                Console.WriteLine("The key doesn't exist!!");
-            }
-
-            return value;    
-        }
-
-        public void set(K key, V value)
-        {
-            if ( cacheSize >= capacity)
-            {
-                // if the cache size if full, remove the least recently used element from the list
+                // if the cache size if full, remove the least recently used element from the list - cacheList.First()
                 // at the same time remove the item from the Dictionary as well
-                K k = cacheList.First();
-                cacheDict.Remove(k);
-                cacheList.Remove(k);
-            }
-
-            if (!cacheDict.ContainsKey(key))
-            {
-                // If it is a new item and doesn't exist in the Dictionary
-                // Add that item to the Dictionary and also add that item in the List to keep and maintain the order
-                // The Recently added item goes to the end of the list
-                cacheDict.Add(key, value);
-                cacheList.Add(key);
-                cacheSize++;  
+                if (size >= capacity)
+                {
+                    var k = cacheList.First();
+                    cacheList.Remove(k);
+                    cacheDict.Remove(k);
+                    cacheDict.Add(key, value);
+                    cacheList.AddLast(key);
+                }
+                else
+                {
+                    // If it is a new item and doesn't exist in the Dictionary
+                    // Add that item to the Dictionary and also add that item in the List to keep and maintain the order
+                    // The Recently added item goes to the end of the list
+                    cacheDict.Add(key, value);
+                    cacheList.AddLast(key);
+                    size++;
+                }
             }
         }
     }
@@ -75,14 +80,11 @@ namespace samplecode_LRUCache
         static void Main(string[] args)
         {
             LRUCache<string, string> lruCache = new LRUCache<string, string>(3);
-
-            lruCache.set("1", "one"); // 1
-            lruCache.set("2", "two"); // 2 1
-            lruCache.set("3", "three"); // 3 2 1
-            lruCache.set("4", "Four"); // 4 3 2 
-
-            lruCache.get("2"); // 2 4 3
-
+            lruCache.Put("1", "one"); // 1
+            lruCache.Put("2", "two"); // 2 1
+            lruCache.Put("3", "three"); // 3 2 1
+            lruCache.Put("4", "Four"); // 4 3 2 
+            lruCache.Get("2"); // 2 4 3
             Console.ReadLine();
         }
     }
