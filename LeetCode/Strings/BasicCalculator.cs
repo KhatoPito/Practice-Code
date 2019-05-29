@@ -37,20 +37,16 @@ namespace KhatoPito.StringPractice
                 return 0;
 
             Stack<int> stack = new Stack<int>();
-
             char[] chars = s.ToCharArray();
 
-            char op = '+';
-            int num = 0;
+            char op = '+'; int num = 0;
 
             for (int i = 0; i < chars.Length; i++)
             {
                 char c = chars[i];
-
                 if (char.IsDigit(c))
                 {
                     num = num * 10 + c - '0';
-
                     if(i != chars.Length - 1)
                         continue;
                 }
@@ -59,24 +55,11 @@ namespace KhatoPito.StringPractice
                 {
                     switch (op)
                     {
-                        case '+':
-                            stack.Push(num);
-                            break;
-
-                        case '-':
-                            stack.Push(-num);
-                            break;
-
-                        case '/':
-                            stack.Push(stack.Pop() / num);
-                            break;
-
-                        case '*':
-                            stack.Push(stack.Pop() * num);
-                            break;
-
+                        case '+': stack.Push(num); break;
+                        case '-': stack.Push(-num); break;
+                        case '/': stack.Push(stack.Pop() / num); break;
+                        case '*': stack.Push(stack.Pop() * num); break;
                     }
-
                     op = c;
                     num = 0;
                 }
@@ -84,10 +67,7 @@ namespace KhatoPito.StringPractice
 
             int total = 0;
             while (stack.Count != 0)
-            {
                 total += stack.Pop();
-            }
-
 
             return total;
         }
