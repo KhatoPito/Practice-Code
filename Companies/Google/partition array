@@ -1,0 +1,6 @@
+It was a question where
+Array [1,4,5,6,8,3] and k = 3 is given
+
+based on the given condition i have to partition the array in k segments
+
+it was about return last chunk in such a way that last pice get maximum sum 
