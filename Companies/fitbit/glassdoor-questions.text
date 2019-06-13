@@ -1,0 +1,26 @@
+File systems pattern
+N Queen Problem
+Design ticket purchase
+Message transmission problem -- count the number of people through sendMessageLeft  
+
+
+remove duplicate elements from List 
+
+Deep copy a list of nodes (a graph)
+https://www.geeksforgeeks.org/clone-an-undirected-graph/
+
+ questions on distributed storage, databases, monitoring, etc
+ 
+ 
+If you're creating an API that serves up images based on an ID and an image size, how would you architect the service?
+https://stackoverflow.com/questions/33279153/rest-api-file-ie-images-processing-best-practices
+
+Design question on creating a Twitter-Flickr API. 
+
+1. Given a stack (don't worry about the  actual implementation of the stack), need to make sure that we keep track of max element in the stack...i.e. whenever the stack is popped, the max can change, so getMax() should always return the max. similarly when a new element is added, the max can change. Actual interview: 1. LCA of a binary tree 2. Given 2 sorted array, find the kth element as if the arrays had been merged. Do it in O(logk) time
+
+conversion number. 
+
+ longest contiguous subsequence across two arrays  
+ 
+ My summary : Design a class that allocate a memory given  the size - number of integers requested. One of functions that is given and can be used in the design is the function allocate. The function "allocate" returns an array of integers of the memory it could allocate. Sometimes allocate returns less size than requested. We need to try calling it again and again trying to get requested size. Function allocate returns you an array of allocated integers(not sure about it). Then code some method to get the value given the index in your array.
