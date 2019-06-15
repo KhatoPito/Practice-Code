@@ -1,0 +1,11 @@
+1) question - merge two strings
+
+two strings given 
+
+abc
+defgh
+
+o/p -> adbecfgh
+
+2) validate brackets 
+ Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
