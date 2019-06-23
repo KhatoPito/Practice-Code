@@ -26,9 +26,10 @@ public class Solution {
             if(IsValid(board, i, col, n))
             {
                 board[i,col] = 1;  //if validate, place the queen at place (i, col)
-                SolveQueen( board, col+1, n); //Go for the other columns recursively
-                board[i,col] = 0;    //When no place is vacant remove that queen                      
+                SolveQueen( board, col+1, n); //Go for the other columns recursively                    
             }
+           
+            board[i,col] = 0;    //When no place is vacant remove that queen  
         }
         
         return; //when no possible order is found         
