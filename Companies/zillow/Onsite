@@ -1,0 +1,14 @@
+1) String SPlit (escape and comma) 
+
+2) Validate BST and 2) http://massivealgorithms.blogspot.com/2016/08/find-all-strings-that-match-specific.html
+
+3) Implement Iterator where 
+
+Interface IIterator
+two methods int current() and bool moveNext() 
+iterator1 and iterator2 are given 
+
+4) System Design question 
+BookId API is given
+Respond with one random word from the books
+
