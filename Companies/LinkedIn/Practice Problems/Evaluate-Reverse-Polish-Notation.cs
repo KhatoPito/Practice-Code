@@ -51,7 +51,6 @@ public class Solution {
             break;
         }
       }
-
       return stack.Pop();
         
     }
