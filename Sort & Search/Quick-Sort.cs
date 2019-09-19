@@ -1,49 +1,68 @@
-    private static void Quick_Sort(int[] arr, int left, int right)
+using System;
+
+namespace KhatoPito.Sorting_Algos
+{
+    public class Program
     {
-        if (left < right)
+        public static void QuickSort(int[] arr, int left, int right)
         {
-            int pivot = Partition(arr, left, right);
-            Quick_Sort(arr, left, pivot - 1);
-            Quick_Sort(arr, pivot + 1, right);
-        }
-
-    }
-
-    // {10(pivot),16(i),8,12,15,6,3,9,5(j)}
-    // i > pivot and j < pivot -- swap(i,j) 
-    // at the end of while loop swap (pivot, j)
-    private static int Partition(int[] arr, int left, int right)
-    {
-        int pivot = arr[left];
-        while (true)
-        {
-            while (arr[left] < pivot)
-                left++;
-
-            while (arr[right] > pivot)
-                right--;
-
+            int pivot;
             if (left < right)
             {
-                if (arr[left] == arr[right]) return right;
-                swap(arr, left, right);
+                pivot = Partition(arr, left, right);
+                QuickSort(arr, left, pivot - 1);
+                QuickSort(arr, pivot + 1, right);
             }
-            else
-                return right; // new pivot 
+        }
+
+        public static int Partition(int[] A, int left, int right)
+        {
+            int start = left;
+            int end = right;
+            int pivot = A[left];    // choose first one to pivot
+
+            while (start < end)
+            {
+                // when left/start is less than pivot increment     
+                while (A[start] < pivot)
+                    start++;
+
+                // when right/end is greater than pivot decrement      
+                while (A[end] > pivot)
+                    end--;
+
+                // Swap those two elements
+                swap(A, start, end);
+
+            }
+
+            return end; // end/left/j is new pivot 
+        }
+
+        public static void swap(int[] A, int left, int right)
+        {
+            int tmp = A[left];
+            A[left] = A[right];
+            A[right] = tmp;
+        }
+
+
+        public static void Main(string[] args)
+        {
+            int[] A = { 22, 4, 55, 67, -9, 6, 100 };
+            Console.WriteLine("Array before sort: ");
+
+            for (int i = 0; i < A.Length; i++)
+                Console.Write(A[i] + " ");
+
+            Console.WriteLine();
+
+            QuickSort(A, 0, A.Length - 1);
+
+            Console.WriteLine("Array after sort: ");
+
+            for (int i = 0; i < A.Length; i++)
+                Console.Write(A[i] + " ");
         }
     }
-
-    private static void swap(int[] arr, int left, int right)
-    {
-        int temp = arr[left];
-        arr[left] = arr[right];
-        arr[right] = temp;
-    }
-    
-    public static void Main()
-    {
-        int[] arr = new int[] { 2, 5, -4, 11, 0, 18, 22, 67, 51, 6 };
-        Quick_Sort(arr, 0, arr.Length-1);
-        
-        Console.ReadLine();
-    }
+}
