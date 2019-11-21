@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6FAFC233-B1AA-4019-A398-BC4800DBC5C1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>KhatoPito</RootNamespace>
+    <AssemblyName>KhatoPito</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArrayPractice\FindDuplicateNum.cs" />
+    <Compile Include="ArrayPractice\ReconstructQueueTest.cs" />
+    <Compile Include="Dictionary\BullCowPractice.cs" />
+    <Compile Include="DP\CoinChange.cs" />
+    <Compile Include="DP\CoinChange2.cs" />
+    <Compile Include="DP\CombinationSum4.cs" />
+    <Compile Include="DP\LIS.cs" />
+    <Compile Include="FitBit Test\Samplecode_LRUCache.cs" />
+    <Compile Include="Graphs\TopologicalSort_Practice.cs" />
+    <Compile Include="Graphs\Generic-Depth-First-Search.cs" />
+    <Compile Include="LinkedIn\DepthSumInverse.cs" />
+    <Compile Include="LinkedIn\FlowerBed.cs" />
+    <Compile Include="Sorting Algos\QuickSort.cs" />
+    <Compile Include="StringPractice\6.MultiplyStrings.cs" />
+    <Compile Include="AirBnbTest\AirBnbTest.cs" />
+    <Compile Include="ArrayPractice\BestTimeToBuyAndSellStock.cs" />
+    <Compile Include="ArrayPractice\SearchRotatedArray.cs" />
+    <Compile Include="ArrayPractice\ThreeSum.cs" />
+    <Compile Include="Codility\NextPositiveNumber.cs" />
+    <Compile Include="Codility\TeslaTest.cs" />
+    <Compile Include="Graphs\Graph.cs" />
+    <Compile Include="Heap\TopKFrequentElements.cs" />
+    <Compile Include="Programm.cs" />
+    <Compile Include="StringPractice\MostCommonWord.cs" />
+    <Compile Include="StringPractice\StringCalculator.cs" />
+    <Compile Include="StudentNameComparer.cs" />
+    <Compile Include="Tesla\TeslaTest1.cs" />
+    <Compile Include="Tesla\TeslaTest2.cs" />
+    <Compile Include="Tesla\TeslaTest3.cs" />
+    <Compile Include="Tree\RangeSumofBST.cs" />
+    <Compile Include="Tree\TreeSerialize.cs" />
+    <Compile Include="Trie\TrieClass.cs" />
+    <Compile Include="Intervals\Interval.cs" />
+    <Compile Include="LinkedList\ReverseList.cs" />
+    <Compile Include="Math Problems\MyPow.cs" />
+    <Compile Include="StringPractice\Anagrams.cs" />
+    <Compile Include="StringPractice\IsPalindrome.cs" />
+    <Compile Include="StringPractice\LongestCommonSubsequence.cs" />
+    <Compile Include="StringPractice\LongestCommonSubstring.cs" />
+    <Compile Include="Main\Solution.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringPractice\LongestPalindromicSubsequence.cs" />
+    <Compile Include="StringPractice\LongestPalindromicSubstring.cs" />
+    <Compile Include="StringPractice\LongestPalindromicSubstringWithExpand.cs" />
+    <Compile Include="StringPractice\LongestUniqueSubString.cs" />
+    <Compile Include="StringPractice\MatchPattern.cs" />
+    <Compile Include="StringPractice\MinimumWindowSubstring.cs" />
+    <Compile Include="StringPractice\PalindromicSubstrings.cs" />
+    <Compile Include="StringPractice\StringCharacterReplacement.cs" />
+    <Compile Include="StringPractice\StringPatternMatch.cs" />
+    <Compile Include="StringPractice\ValidParentheses.cs" />
+    <Compile Include="Tree\BFS.cs" />
+    <Compile Include="Tree\BuildTree.cs" />
+    <Compile Include="Tree\SamplePractice_DFS_BFS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Main\VISA\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

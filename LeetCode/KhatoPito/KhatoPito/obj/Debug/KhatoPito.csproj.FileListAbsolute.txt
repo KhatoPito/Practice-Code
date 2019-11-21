@@ -1,0 +1,7 @@
+C:\Users\vmajmundar\Documents\GitHub\Practice-Code\LeetCode\KhatoPito\KhatoPito\bin\Debug\KhatoPito.exe.config
+C:\Users\vmajmundar\Documents\GitHub\Practice-Code\LeetCode\KhatoPito\KhatoPito\bin\Debug\KhatoPito.exe
+C:\Users\vmajmundar\Documents\GitHub\Practice-Code\LeetCode\KhatoPito\KhatoPito\bin\Debug\KhatoPito.pdb
+C:\Users\vmajmundar\Documents\GitHub\Practice-Code\LeetCode\KhatoPito\KhatoPito\obj\Debug\KhatoPito.csproj.CoreCompileInputs.cache
+C:\Users\vmajmundar\Documents\GitHub\Practice-Code\LeetCode\KhatoPito\KhatoPito\obj\Debug\KhatoPito.exe
+C:\Users\vmajmundar\Documents\GitHub\Practice-Code\LeetCode\KhatoPito\KhatoPito\obj\Debug\KhatoPito.pdb
+C:\Users\vmajmundar\Documents\GitHub\Practice-Code\LeetCode\KhatoPito\KhatoPito\obj\Debug\KhatoPito.csprojResolveAssemblyReference.cache
