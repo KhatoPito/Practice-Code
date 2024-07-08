@@ -1,11 +1,28 @@
 # README
 
-## Why Do You Want to Leave Neogov?
+Round 2) With Two Dev Leads - 30 mins technical and 30 mins coding 
 
+1) what are the benefits of hangfire
+2) In what situation you would use Azure Function, Azure Servce and Azure Kubernatives 
+
+3) in microservice architecture, lets say Service A communicates to Service B 
+How do we keep monitoring or track of the issue lets say when Service B is down or doesn't reponse to Service Request from A
+
+4)  Lets say if something goes wrong with rabbitMQ, queues are piling up or jobs are not picked up, what setup can we have such that, those issues are notified or alerted ASAP 
+
+
+
+Coding 
+
+find if two strings are anagrams or not
+
+
+Round 1) With Director >> 
+
+## Why Do You Want to Leave Neogov?
 At Neogov, I've had the privilege of leading the development and launch of impactful SaaS solutions. While I'm grateful for the experience, I'm now seeking an opportunity to leverage my full technical expertise on a larger scale. Loan Depot's focus on innovation within the mortgage industry is particularly exciting, and I believe my leadership and technical skills align well with the challenges and opportunities you present.
 
 ## Why Do You Want to Join Loan Depot as Lead Developer?
-
 Loan Depot's dedication to fostering a superior customer experience through cutting-edge technology deeply resonates with me. My proven track record of leading cross-functional teams and architecting enterprise applications directly translates to the requirements of the Lead Developer role. I'm confident that my skills and experience can significantly contribute to Loan Depot's continued success and advancement in the mortgage industry.
 
 While I value the experience of team management, my long-term career goal is to focus on technical leadership within a specific domain. This Dev Lead role is a perfect stepping stone towards that goal, allowing me to hone my technical skills while still leading and mentoring developers.
